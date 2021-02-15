@@ -1,0 +1,76 @@
+{
+	"workflowApiVersion": "1.0",
+	"metaData": {
+		"icon": "smile.jpg",
+		"category": "message"
+	},
+	"type": "REST",
+	"userInterface": {
+		"configInspector": {
+			"size": "medium"
+		}
+	},
+	"lang": {
+		"en-US": {
+			"name": "Eat Healthy",
+			"description": "First Custom Activity Demo"
+		}
+	},
+	"arguments":{
+		"execute":{
+			"inArguments":[
+				{
+		 			"Identifier":"{{Contact.Key}}"
+				},
+				{
+					"FirstName":"{{Contact.Attribute.Demo_DT.FirstName}}"
+				}
+
+			],
+			"outArguments":[],
+			"url":"https://requestinspector.com/inspect/01ey6ra3f13nb376yq6n4mgqaq"
+		}
+
+	},
+	"configurationArguments": {
+     
+      "save": {
+        "url": "https://first-try-customapp.herokuapp.com/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://requestinspector.com/inspect/01ey6ra3f13nb376yq6n4mgqaq",
+           "verb": "POST",
+        "useJwt": true
+       },
+      "stop": {
+        "url": "https://first-try-customapp.herokuapp.com/journeybuilder/stop",
+           "verb": "POST",
+        "useJwt": true
+      },
+      "validate": {
+        "url": "https://first-try-customapp.herokuapp.com/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": true
+      }
+    },
+	
+	"editable": true,
+  "outcomes": [
+    {
+      "key": "c70c1a3b-853a-4e1f-8577-4d23d904f0d9",
+      "next": "WAITBYDURATION-1",
+      "arguments": {},
+      "metaData": {
+        "invalid": false
+      }
+    }
+  ],
+ 	"userInterfaces": {
+		"configModal": {
+			"height": 600,
+			"width": 600
+		}
+	}
+}
